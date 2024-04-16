@@ -18,10 +18,9 @@ function App() {
   }
   return (
     <>
-      <div className='container mt-5'>
 
+      <div className='container mt-5'>
         <h1 className='fw-bolder'>My Todo List</h1>
-      
           <Row>
             <Col><Form.Control value={input} onChange={(e)=>setInput(e.target.value)}   type="text" placeholder="Todo Name" /></Col>
             <Col><Button onClick={()=>handleAdd()} variant="success" className='ms-5 '>Submit</Button></Col>
@@ -29,11 +28,6 @@ function App() {
           </Row>
         <br /><br />
          <Result/>
-
-
-       
-      
-        
         </div>
     </>
   )

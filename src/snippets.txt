@@ -1,0 +1,29 @@
+
+          {
+            todolist.map((item,index) => (
+                
+              <Row key={item.id} className={` ${checkedItems[index] ? 'bg-success' : ''}`}>
+                <Col className='  '>{index + 1}. Done :<input
+                  className='ms-2'
+                  type="checkbox"
+                  onChange={() => handleCheckboxChange(index)}
+                  checked={checkedItems[index]}
+                /></Col>
+                <Col className='' xs={8}>{item.todo}</Col>
+                <Col className=''>
+                  <Button onClick={() => dispatch(delTodo(item.id))} variant="warning" className='ms-5 '>Delete</Button>
+                </Col>
+              </Row>
+
+
+            ))
+          }
+
+
+  const handleCheckboxChange = (index) => {
+    const newCheckedItems = [...checkedItems];
+    newCheckedItems[index] = !newCheckedItems[index];
+    setCheckedItems(newCheckedItems);
+  };
+
+
